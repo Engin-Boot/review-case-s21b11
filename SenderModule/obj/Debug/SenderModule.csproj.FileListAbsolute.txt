@@ -1,0 +1,7 @@
+C:\Users\320106688\Documents\ReviewCase\SenderModule\bin\Debug\SenderModule.exe.config
+C:\Users\320106688\Documents\ReviewCase\SenderModule\bin\Debug\SenderModule.exe
+C:\Users\320106688\Documents\ReviewCase\SenderModule\bin\Debug\SenderModule.pdb
+C:\Users\320106688\Documents\ReviewCase\SenderModule\obj\Debug\SenderModule.csprojAssemblyReference.cache
+C:\Users\320106688\Documents\ReviewCase\SenderModule\obj\Debug\SenderModule.csproj.CoreCompileInputs.cache
+C:\Users\320106688\Documents\ReviewCase\SenderModule\obj\Debug\SenderModule.exe
+C:\Users\320106688\Documents\ReviewCase\SenderModule\obj\Debug\SenderModule.pdb
