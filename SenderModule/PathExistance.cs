@@ -9,7 +9,7 @@ namespace Sender
 {
     public class PathExistance
     {
-        public bool checkFileExistorNot(string path)
+        public bool CheckFileExistorNot(string path)
         {
             if (File.Exists(path))
                 return true;

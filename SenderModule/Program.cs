@@ -13,18 +13,18 @@ namespace Sender
     {
         public static void Main(string[] args)
         {
-            string path = @"C:\Users\320106688\Documents\review-case-s21b11\sample-review\review-report.csv";
+            string path = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
             //Necessary to put @ symbol at start of path, 
             //else it gives "System.ArgumentException: 'Illegal characters in path.'"
             PathExistance exist = new PathExistance();
-            bool checkPath = exist.checkFileExistorNot(path);
+            bool checkPath = exist.CheckFileExistorNot(path);
 
             if (checkPath)
             {
                 string[] lines = System.IO.File.ReadAllLines(path);
 
                 csvPrinter printCSV = new csvPrinter();
-                printCSV.printTheCSVFile(lines);
+                printCSV.PrintTheCSVFile(lines);
             }
             else
             {

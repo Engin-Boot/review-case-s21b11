@@ -10,12 +10,12 @@ namespace Sender
 {
     class ColumnFilter
     {
-        public bool printCSVColumn(string[] lines)
+        public bool PrintCSVColumn(string[] lines)
         {
             bool isPrinted = false;
 
-            Console.WriteLine("Enter column number (0 or 1)");
-            int columnNumber = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter column number (0 or 1)");
+            int columnNumber = 1;// Convert.ToInt32(Console.ReadLine());
 
             foreach (var columns in lines.Where(str => !string.IsNullOrEmpty(str)).Select(str => str.Split(','))
                 .Where(str => str.Length > 1 && !string.IsNullOrEmpty(str[1]))
@@ -29,11 +29,11 @@ namespace Sender
 
         private bool PrintSpecificColumn(string columns)
         {
-            foreach (var column in columns)
-            {
-                Console.Write(column);
-            }
-            Console.WriteLine();
+            //foreach (var column in columns)
+            //{
+            //    Console.Write(column);
+            //}
+            Console.WriteLine(columns);
 
             return true;
         }

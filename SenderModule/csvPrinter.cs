@@ -8,11 +8,11 @@ namespace Sender
 {
     public class csvPrinter
     {
-        public void printTheCSVFile(string[] lines)
+        public void PrintTheCSVFile(string[] lines)
         {
 
-            Console.WriteLine("Enter 'row' to print CSV file rowwise and 'col' to print CSV file columnwise");
-            string readerInput = Console.ReadLine();
+            //Console.WriteLine("Enter 'row' to print CSV file rowwise and 'col' to print CSV file columnwise");
+            string readerInput = "col";//Console.ReadLine();
 
             if (readerInput == "row")
             {
@@ -34,7 +34,7 @@ namespace Sender
             {
                 //Read columns
                 ColumnFilter colF = new ColumnFilter();
-                colF.printCSVColumn(lines);
+                colF.PrintCSVColumn(lines);
             }
             else
             {
