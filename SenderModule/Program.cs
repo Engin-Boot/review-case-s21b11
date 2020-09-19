@@ -1,30 +1,21 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
-using System.Data;
 
-namespace Sender
+namespace SenderModule
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
-            string path = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
+            const string path = @"E:\Philips\BootCamp\Review-case-s21b11-master\sample-review\Review-report.csv";
             //Necessary to put @ symbol at start of path, 
             //else it gives "System.ArgumentException: 'Illegal characters in path.'"
-            PathExistance exist = new PathExistance();
-            bool checkPath = exist.CheckFileExistorNot(path);
 
+            var checkPath = PathExistence.CheckFileExistOrNot(path);
             if (checkPath)
             {
-                string[] lines = System.IO.File.ReadAllLines(path);
+                var lines = System.IO.File.ReadAllLines(path);
 
-                csvPrinter printCSV = new csvPrinter();
-                printCSV.PrintTheCSVFile(lines);
+                CsvPrinter.PrintTheCsvFile(lines);
             }
             else
             {

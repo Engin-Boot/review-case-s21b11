@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Remoting.Services;
 
-namespace Sender
+namespace SenderModule
 {
-    class ColumnFilter
+    internal class ColumnFilter
     {
-        public bool PrintCSVColumn(string[] lines)
+        public static bool PrintCsvColumn(string[] lines)
         {
-            bool isPrinted = false;
+            var isPrinted = false;
 
-            //Console.WriteLine("Enter column number (0 or 1)");
-            int columnNumber = 1;// Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Column Number (0 or 1)");
+            var columnNumber = Convert.ToInt32(Console.ReadLine());
 
             foreach (var columns in lines.Where(str => !string.IsNullOrEmpty(str)).Select(str => str.Split(','))
                 .Where(str => str.Length > 1 && !string.IsNullOrEmpty(str[1]))
@@ -27,14 +22,13 @@ namespace Sender
             return isPrinted;
         }
 
-        private bool PrintSpecificColumn(string columns)
+        public static bool PrintSpecificColumn(string columns)
         {
-            //foreach (var column in columns)
-            //{
-            //    Console.Write(column);
-            //}
-            Console.WriteLine(columns);
+            //Console.WriteLine(columns); //It Prints each comment on separate line
 
+            //Below prints each word of comment on separate line.
+            var words = columns.Split(' ');
+            Array.ForEach(words, Console.WriteLine);
             return true;
         }
     }

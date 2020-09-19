@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Sender;
+﻿using SenderModule;
 using Xunit;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace SenderTest
 {
     public class Class1
     {
         [Fact]
-        public void TestingForTheExitanceOfCSVFile() { 
-            string CSVPath = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
-            PathExistance Exist = new PathExistance();
-            Assert.True(Exist.CheckFileExistorNot(CSVPath));
+        public void TestingForTheExistenceOfCsvFile()
+        {
+            const string csvPath = @"E:\Philips\BootCamp\Review-case-s21b11-master\sample-review\Review-report.csv";
+
+            Assert.True(PathExistence.CheckFileExistOrNot(csvPath));
         }
 
         [Fact]
-        public void TestingForTheNonExitanceOfCSVFile()
+        public void TestingForTheNonExistenceOfCsvFile()
         {
-            string CSVPath = @"C:\Users\320103928\review-case-s21b11\review-report.csv";
-            PathExistance Exist = new PathExistance();
-            Assert.False(Exist.CheckFileExistorNot(CSVPath));
+            const string csvPath = @"E:\Philips\Review-case-s21b11-master\sample-review\Review-report.csv";
+
+            Assert.False(PathExistence.CheckFileExistOrNot(csvPath));
         }
 
         //[Fact]

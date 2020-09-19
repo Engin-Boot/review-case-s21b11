@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
-namespace Sender
+namespace SenderModule
 {
-    public class PathExistance
+    public class PathExistence
     {
-        public bool CheckFileExistorNot(string path)
+        public static bool CheckFileExistOrNot(string path)
         {
-            if (File.Exists(path))
-                return true;
-            else
-                return false;
+            return File.Exists(path);
+
         }
     }
 }

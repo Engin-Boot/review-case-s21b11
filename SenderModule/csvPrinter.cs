@@ -1,44 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sender
+namespace SenderModule
 {
-    public class csvPrinter
+    public class CsvPrinter
     {
-        public void PrintTheCSVFile(string[] lines)
+        public static void PrintTheCsvFile(string[] lines)
         {
 
-            //Console.WriteLine("Enter 'row' to print CSV file rowwise and 'col' to print CSV file columnwise");
-            string readerInput = "col";//Console.ReadLine();
+            Console.WriteLine("Enter 'row' to print CSV file Row-Wise and 'col' to print CSV file Column-Wise");
+            var readerInput = Console.ReadLine();
 
-            if (readerInput == "row")
+            switch (readerInput)
             {
-                foreach (string line in lines)
-                {
+                case "row":
 
-                    string[] columns = line.Split(',');
-
-                    foreach (string column in columns)
+                    foreach (var line in lines)
                     {
+                        var columns = line.Split(',');
 
-                        Console.Write(column + " ");
+                        foreach (var column in columns)
+                        {
+
+                            Console.Write(column + " ");
+                        }
+
+                        Console.WriteLine();
                     }
 
-                    Console.WriteLine();
-                }
-            }
-            else if (readerInput == "col")
-            {
-                //Read columns
-                ColumnFilter colF = new ColumnFilter();
-                colF.PrintCSVColumn(lines);
-            }
-            else
-            {
-                Console.WriteLine("Invalid user input");
+                    break;
+
+                case "col":
+                    //Read columns
+                    ColumnFilter.PrintCsvColumn(lines);
+                    break;
+
+                default:
+
+                    Console.WriteLine("Invalid user input");
+                    break;
             }
         }
     }
