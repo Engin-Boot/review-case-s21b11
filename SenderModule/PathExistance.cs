@@ -2,7 +2,7 @@
 
 namespace SenderModule
 {
-    public class PathExistence
+    public static class PathExistence
     {
         public static bool CheckFileExistOrNot(string path)
         {

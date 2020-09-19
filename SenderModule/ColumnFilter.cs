@@ -3,12 +3,11 @@ using System.Linq;
 
 namespace SenderModule
 {
-    internal class ColumnFilter
+    public static class ColumnFilter
     {
-        public static bool PrintCsvColumn(string[] lines)
+        public static void PrintCsvColumn(string[] lines)
         {
-            var isPrinted = false;
-
+           
             Console.WriteLine("Enter Column Number (0 or 1)");
             var columnNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -17,19 +16,18 @@ namespace SenderModule
                 .ToArray())
             {
                 PrintSpecificColumn(columns[columnNumber]);
-                isPrinted = true;
+                
             }
-            return isPrinted;
+           
         }
 
-        public static bool PrintSpecificColumn(string columns)
+        private static void PrintSpecificColumn(string columns)
         {
             //Console.WriteLine(columns); //It Prints each comment on separate line
 
             //Below prints each word of comment on separate line.
             var words = columns.Split(' ');
             Array.ForEach(words, Console.WriteLine);
-            return true;
         }
     }
 }

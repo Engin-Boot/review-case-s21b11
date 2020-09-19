@@ -2,7 +2,7 @@
 
 namespace SenderModule
 {
-    public class CsvPrinter
+    public static class CsvPrinter
     {
         public static void PrintTheCsvFile(string[] lines)
         {

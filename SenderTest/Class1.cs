@@ -8,7 +8,7 @@ namespace SenderTest
         [Fact]
         public void TestingForTheExistenceOfCsvFile()
         {
-            const string csvPath = @"E:\Philips\BootCamp\Review-case-s21b11-master\sample-review\Review-report.csv";
+            const string csvPath = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
 
             Assert.True(PathExistence.CheckFileExistOrNot(csvPath));
         }

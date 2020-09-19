@@ -2,11 +2,11 @@
 
 namespace SenderModule
 {
-    internal class Program
+    public static class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            const string path = @"E:\Philips\BootCamp\Review-case-s21b11-master\sample-review\Review-report.csv";
+            const string path = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
             //Necessary to put @ symbol at start of path, 
             //else it gives "System.ArgumentException: 'Illegal characters in path.'"
 
