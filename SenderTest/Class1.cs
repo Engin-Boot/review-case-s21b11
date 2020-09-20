@@ -33,9 +33,16 @@ namespace SenderTest
         public void ThrowExceptionIfColumnNumberIsOutOfRange(int expectedColumnNumber)
         {
             const string csvPath = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
-            var lines = System.IO.File.ReadAllLines(csvPath);
-            Assert.Throws<System.IndexOutOfRangeException>(() =>
-                ColumnFilter.PrintCsvColumn(lines, expectedColumnNumber));
+            var checkPath = PathExistence.CheckFileExistOrNot(csvPath);
+
+            if (checkPath)
+            {
+                var lines = System.IO.File.ReadAllLines(csvPath);
+                Assert.Throws<System.IndexOutOfRangeException>(() => ColumnFilter.PrintCsvColumn(lines, expectedColumnNumber));
+            }
+            else {
+                Assert.True(false);
+            }
         }
 
         /*

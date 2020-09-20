@@ -13,21 +13,12 @@ namespace SenderModule
             {
                 case "row":
                     //var lineCount = 0;
-                    RowPrinter.PrintAllRowsOfCsvFile(lines);
+                    RowColumnPrinter.PrintAllRowsOfCsvFile(lines);
                     break;
 
                 case "col":
                     //Read columns
-                    try
-                    {
-                        Console.WriteLine("Enter Column Number (0 or 1)");
-                        var columnNumber = Convert.ToInt32(Console.ReadLine());
-                        ColumnFilter.PrintCsvColumn(lines, columnNumber);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
+                    RowColumnPrinter.PrintAllColumnsOfcsvFile(lines);
                     break;
 
                 default:

@@ -63,7 +63,7 @@
     <Compile Include="PathExistance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RowPrinter.cs" />
+    <Compile Include="RowColumnPrinter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
