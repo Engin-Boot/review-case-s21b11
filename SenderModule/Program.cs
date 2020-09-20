@@ -11,15 +11,15 @@ namespace SenderModule
             //else it gives "System.ArgumentException: 'Illegal characters in path.'"
 
             var checkPath = PathExistence.CheckFileExistOrNot(path);
+
             if (checkPath)
             {
                 var lines = System.IO.File.ReadAllLines(path);
-
                 CsvPrinter.PrintTheCsvFile(lines);
             }
             else
             {
-                Console.WriteLine("ALERT..! Check file available or not..!");
+                Console.WriteLine("ALERT..! Check the file path or check file available or not..!");
             }
 
         }
