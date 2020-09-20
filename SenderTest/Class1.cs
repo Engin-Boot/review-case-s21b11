@@ -26,13 +26,13 @@ namespace SenderTest
         }
 
 
-        /*[Theory]
+        [Theory]
         [InlineData(2)]
         [InlineData(3)]
         [InlineData(4)]
         public void ThrowExceptionIfColumnNumberIsOutOfRange(int expectedColumnNumber)
         {
-            const string csvPath = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
+            const string csvPath = @"D:\a\review-case-s21b11\review-case-s21b11\sample-review\review-report.csv";
             var checkPath = PathExistence.CheckFileExistOrNot(csvPath);
 
             if (checkPath)
@@ -45,7 +45,7 @@ namespace SenderTest
             }
         }
 
-        
+        /*
         [Fact]
         public void CheckingSizeOfCsvFile()
         {
