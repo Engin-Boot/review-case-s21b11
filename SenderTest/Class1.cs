@@ -26,7 +26,7 @@ namespace SenderTest
         }
 
 
-        [Theory]
+        /*[Theory]
         [InlineData(2)]
         [InlineData(3)]
         [InlineData(4)]
@@ -45,7 +45,7 @@ namespace SenderTest
             }
         }
 
-        /*
+        
         [Fact]
         public void CheckingSizeOfCsvFile()
         {
