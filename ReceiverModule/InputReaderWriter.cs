@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Receiver
+namespace ReceiverModule
 {
-    class InputReaderWriter
+    public class InputReaderWriter
     {
         public class ConsoleInputReader
         {
@@ -20,9 +20,9 @@ namespace Receiver
             }
         }
 
-        public class outputWriter
+        public class OutputWriter
         {
-            public static void csvGenerator(Dictionary<string, int> processedData, bool noInputDetected)
+            public static void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected)
             {
                 if (noInputDetected)
                 {
@@ -33,7 +33,7 @@ namespace Receiver
                 else
                 {
                     var outputFile = new StreamWriter("output.csv");
-                    foreach (KeyValuePair<string, int> wordCount in processedData)
+                    foreach (var wordCount in processedData)
                     {
                         outputFile.WriteLine(wordCount.Key + "," + wordCount.Value);
                         Console.WriteLine(wordCount.Key + " " + wordCount.Value);
@@ -44,21 +44,21 @@ namespace Receiver
             }
 
         }
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Sit Back and Relax and let me do my thing .......");
             var inputData = ConsoleInputReader.ReadInput();
             if (inputData.Count == 0)
             {
-                Dictionary<string, int> dic = new Dictionary<string, int>();
-                outputWriter.csvGenerator(dic, true);
+                var dic = new Dictionary<string, int>();
+                OutputWriter.CsvGenerator(dic, true);
             }
             else
             {
-                inputMining mineInput = new inputMining();
+                InputMining mineInput = new InputMining();
                 var wordCount = mineInput.ProcessInput(inputData);
                 //wordCount = removeStopWords.removeStopWorsFromProcessedData(wordCount);
-                outputWriter.csvGenerator(wordCount, false);
+                OutputWriter.CsvGenerator(wordCount, false);
 
             }
         }

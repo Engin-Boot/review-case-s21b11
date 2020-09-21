@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace Receiver
+namespace ReceiverModule
 {
-    class removeStopWords
+    public class RemoveStopWords
     {
-        public static HashSet<string> stopWords = new HashSet<string>() {"i",
+        public static HashSet<string> StopWords = new HashSet<string>() {"i",
             "me", "my", "myself", "we", "our", "ours", "ourselves", "you",
             "your", "yours", "yourself", "yourselves", "he", "him", "his",
             "himself", "she", "her", "hers", "herself", "it", "its", "itself",
