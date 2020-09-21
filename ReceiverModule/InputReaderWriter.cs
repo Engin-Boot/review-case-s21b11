@@ -54,7 +54,7 @@ namespace ReceiverModule
     }
     public class MainMethod
     {
-        private static void Main(string[] args)
+        public static void Main()
         {
             Console.WriteLine("Sit Back and Relax and let me do my thing .......");
             var getInput = new ConsoleInputReader();

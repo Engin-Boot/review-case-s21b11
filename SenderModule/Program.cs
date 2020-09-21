@@ -6,7 +6,7 @@ namespace SenderModule
     {
         public static void Main()
         {
-            const string path = @"C:\Users\320103928\review-case-s21b11\sample-review\review-report.csv";
+            const string path = @"C:\Users\320106688\Documents\review-case-s21b11\sample-review\review-report.csv";
             //Necessary to put @ symbol at start of path, 
             //else it gives "System.ArgumentException: 'Illegal characters in path.'"
 
@@ -22,6 +22,7 @@ namespace SenderModule
                 Console.WriteLine("ALERT..! Check the file path or check file available or not..!");
             }
             Console.WriteLine("EOF");
+            Console.ReadLine();
         }
     }
 }
