@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.IO;
 
 namespace ReceiverModule
-{
-    public abstract class InputReader
+{ 
+    public interface IInputReader
     {
-        public abstract List<string> ReadInput();
+        public List<string> ReadInput();
     }
 
-    public abstract class OutputGenerator
+   public interface  IOutputGenerator
     {
-        public abstract void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected);
+        public void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected);
     }
 
-    public class ConsoleInputReader : InputReader
+    public class ConsoleInputReader : IInputReader
     {
-        public override List<string> ReadInput()
+        public List<string> ReadInput()
         {
             var rawData = new List<string>();
             string comment;
@@ -28,9 +28,9 @@ namespace ReceiverModule
         }
     }
 
-    public class OutputWriter : OutputGenerator
+    public class OutputWriter : IOutputGenerator
     {
-        public override void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected)
+        public void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected)
         {
             if (noInputDetected)
             {
@@ -53,7 +53,7 @@ namespace ReceiverModule
 
     }
 
-    public class MainMethod
+    public abstract class MainMethod
     {
         public static void Main()
         {
