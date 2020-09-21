@@ -4,28 +4,49 @@ namespace ReceiverModule
 {
     public class InputMining
     {
-        public Dictionary<string, int> ProcessInput(List<string> rawInputData)
+        public List<string> ParseInput(List<string> rawInputData)
         {
-            var wordCount = new Dictionary<string, int>();
-            var separator = new char[] { ' ', '.', ',' };
+            var separator = new[] {' ', '.', ','};
+            var parsedCommentList = new List<string>();
 
             foreach (var comment in rawInputData)
             {
-                //var comment = rawInputData[i];
                 var words = comment.Split(separator);
                 foreach (var word in words)
                 {
-                    if (wordCount.ContainsKey(word))
-                    {
-                        wordCount[word]++;
-                    }
-                    else
-                    {
-                        wordCount.Add(word, 1);
-                    }
+                    parsedCommentList.Add(word);
                 }
             }
+
+            return parsedCommentList;
+        }
+
+        public List<string> RemoveStopWordsFromParsedComments(List<string> parsedComments)
+        {
+         return RemoveStopWords.RemoveStopWordsHelper(parsedComments);
+
+        }
+
+        public Dictionary<string, int> WordFrequencyGenerator(List<string> comments)
+        {
+            var parsedComments = ParseInput(comments);
+            var commentsFreeFromStopWords = RemoveStopWordsFromParsedComments(parsedComments);
+
+            var wordCount = new Dictionary<string, int>();
+            foreach (var word in commentsFreeFromStopWords)
+            {
+                if (wordCount.ContainsKey(word))
+                {
+                    wordCount[word]++;
+                }
+                else
+                {
+                    wordCount.Add(word, 1);
+                }
+            }
+
             return wordCount;
         }
     }
 }
+

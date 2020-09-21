@@ -22,14 +22,19 @@ namespace ReceiverModule
             "so", "than", "too", "very", "s", "t", "can", "will", "just",
             "don", "should", "now"};
 
-        /*public static void removeStopWorsFromProcessedData(Dictionary<string, int> processedData) {
-            foreach (KeyValuePair<string, int> wordCount in processedData)
+        public static List<string> RemoveStopWordsHelper(List<string> processedData) {
+            for (int i = 0; i < processedData.Count; )
             {
-                if (stopWords.Contains(wordCount.Key)) {
-                    processedData.Remove(wordCount.Key);
+                if (StopWords.Contains(processedData[i]))
+                {
+                    processedData.RemoveAt(i);
+                }
+                else
+                {
+                    i++;
                 }
             }
             return processedData;
-        }*/
+        }
     }
 }

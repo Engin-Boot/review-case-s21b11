@@ -69,8 +69,7 @@ namespace ReceiverModule
             else
             {
                 InputMining mineInput = new InputMining();
-                var wordCount = mineInput.ProcessInput(inputData);
-                //wordCount = removeStopWords.removeStopWorsFromProcessedData(wordCount);
+                var wordCount = mineInput.WordFrequencyGenerator(inputData);
                 writeOutput.CsvGenerator(wordCount, false);
 
             }
