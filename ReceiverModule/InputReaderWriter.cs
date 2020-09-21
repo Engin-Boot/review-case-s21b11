@@ -4,17 +4,7 @@ using System.IO;
 
 namespace ReceiverModule
 { 
-    public interface IInputReader
-    {
-        public List<string> ReadInput();
-    }
-
-   public interface  IOutputGenerator
-    {
-        public void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected);
-    }
-
-    public class ConsoleInputReader : IInputReader
+    public class ConsoleInputReader
     {
         public List<string> ReadInput()
         {
@@ -28,7 +18,7 @@ namespace ReceiverModule
         }
     }
 
-    public class OutputWriter : IOutputGenerator
+    public class OutputWriter
     {
         public void CsvGenerator(Dictionary<string, int> processedData, bool noInputDetected)
         {
