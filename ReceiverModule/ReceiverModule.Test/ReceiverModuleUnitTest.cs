@@ -13,7 +13,6 @@ namespace ReceiverModule.Test
             var rawComment = new List<string> {"This is a raw comment"};
             InputMining obj = new InputMining();
             var parsedComment = new List<string>{"This", "is", "a", "raw", "comment"};
-            //var difference = new List<string>();
             var difference = parsedComment.Except(obj.ParseInput(rawComment));
             Assert.True(difference.Count() == 0);
         }

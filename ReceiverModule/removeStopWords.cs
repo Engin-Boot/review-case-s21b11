@@ -4,7 +4,7 @@ namespace ReceiverModule
 {
     public class RemoveStopWords
     {
-        public static HashSet<string> StopWords = new HashSet<string>() {"i",
+        private readonly HashSet<string> _stopWords = new HashSet<string>() {"i",
             "me", "my", "myself", "we", "our", "ours", "ourselves", "you",
             "your", "yours", "yourself", "yourselves", "he", "him", "his",
             "himself", "she", "her", "hers", "herself", "it", "its", "itself",
@@ -23,9 +23,10 @@ namespace ReceiverModule
             "don", "should", "now"};
 
         public static List<string> RemoveStopWordsHelper(List<string> processedData) {
+            var obj = new RemoveStopWords();
             for (int i = 0; i < processedData.Count; )
             {
-                if (StopWords.Contains(processedData[i]))
+                if (obj._stopWords.Contains(processedData[i]))
                 {
                     processedData.RemoveAt(i);
                 }
