@@ -52,6 +52,7 @@ namespace ReceiverModule
         }
 
     }
+
     public class MainMethod
     {
         public static void Main()

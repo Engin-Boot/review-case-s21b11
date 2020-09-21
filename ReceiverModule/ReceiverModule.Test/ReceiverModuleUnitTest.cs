@@ -14,7 +14,8 @@ namespace ReceiverModule.Test
             InputMining obj = new InputMining();
             var parsedComment = new List<string>{"This", "is", "a", "raw", "comment"};
             var difference = parsedComment.Except(obj.ParseInput(rawComment));
-            Assert.True(difference.Count() == 0);
+            var numberOfElements = difference.Count();
+            Assert.True(numberOfElements == 0);
         }
 
         [Fact]
@@ -24,7 +25,8 @@ namespace ReceiverModule.Test
             var commentFreeFromStopWords = new List<string> {"code", "working"};
             InputMining obj = new InputMining();
             var difference = commentFreeFromStopWords.Except(obj.RemoveStopWordsFromParsedComments(parsedComment));
-            Assert.True(difference.Count() == 0);
+            var numberOfElements = difference.Count();
+            Assert.True(numberOfElements == 0);
         }
 
         [Fact]
