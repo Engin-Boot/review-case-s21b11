@@ -26,7 +26,7 @@ namespace SenderModule
         {
             try
             {
-                Console.WriteLine("Enter Column Number (0 or 1)");
+                //Console.WriteLine("Enter Column Number (0 or 1)");
                 var columnNumber = Convert.ToInt32(Console.ReadLine());
                 ColumnFilter.PrintCsvColumn(lines, columnNumber);
             }

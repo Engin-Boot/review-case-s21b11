@@ -6,7 +6,7 @@ namespace SenderModule
     {
         public static void PrintTheCsvFile(string[] lines)
         {
-            Console.WriteLine("Enter 'row' to print CSV file Row-Wise and 'col' to print CSV file Column-Wise");
+            //Console.WriteLine("Enter 'row' to print CSV file Row-Wise and 'col' to print CSV file Column-Wise");
             var readerInput = Console.ReadLine();
 
             switch (readerInput)

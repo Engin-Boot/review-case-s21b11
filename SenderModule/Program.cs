@@ -21,7 +21,7 @@ namespace SenderModule
             {
                 Console.WriteLine("ALERT..! Check the file path or check file available or not..!");
             }
-
+            Console.WriteLine("EOF");
         }
     }
 }

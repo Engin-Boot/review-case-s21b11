@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SenderTest
 {
-    public class Class1
+    public class SenderUnitTest
     {
         [Fact]
         public void TestingForTheExistenceOfCsvFile()
